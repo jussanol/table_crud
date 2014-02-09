@@ -141,9 +141,9 @@ class HTML_Tag extends \core\Clase_Base {
 		$controlador = isset($query_string[0]) ? $query_string[0] : "inicio";
 		$metodo = isset($query_string[1]) ? $query_string[1] : "index";
 		
-		if ( ! \core\Usuario::tiene_permiso($controlador, $metodo)) {
-			return $link;
-		};
+//		if ( ! \core\Usuario::tiene_permiso($controlador, $metodo)) {
+//			return $link;
+//		};
 		
 		$argumentos ="";
 		foreach ($otros_argumentos as $key => $value) {
@@ -181,9 +181,9 @@ class HTML_Tag extends \core\Clase_Base {
 		$controlador = isset($query_string[0]) ? $query_string[0] : "inicio";
 		$metodo = isset($query_string[1]) ? $query_string[1] : "index";
 		
-		if ( ! \core\Usuario::tiene_permiso($controlador, $metodo)) {
-			return $link;
-		};
+//		if ( ! \core\Usuario::tiene_permiso($controlador, $metodo)) {
+//			return $link;
+//		};
 		
 		if (isset($query_string[2])) {
 			$id = $query_string[2];

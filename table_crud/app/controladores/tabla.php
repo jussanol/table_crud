@@ -31,11 +31,12 @@ class tabla extends \core\Controlador {
         $validaciones = array(
 //                        "id"=>"errores_requerido && errores_numero_entero_positivo && errores_referencia:id/moviles/id"
             "modelo_marca" => "errores_requerido && errores_texto && errores_unicidad_insertar:modelo_marca/moviles/modelo_marca"
-            , "valoracion" => "errores_texto"
-            , "precio" => "errores_precio"
+            , "valoracion" => "errores_requerido && errores_numero_entero_positivo"
+            , "precio" => "errores_requerido && errores_precio"
             , "tamanio_pantalla" => "errores_texto"
             , 'autonomia' => 'errores_texto'
             , 'resolucion_camara' => 'errores_texto'
+            , 'fecha_lanzamiento' => 'errores_requerido && errores_fecha'
         );
         if (!$validacion = !\core\Validaciones::errores_validacion_request($validaciones, $datos))
             $datos["errores"]["errores_validacion"] = "Corrige los errores.";
@@ -95,11 +96,12 @@ class tabla extends \core\Controlador {
         $validaciones = array(
             "id" => "errores_requerido && errores_numero_entero_positivo && errores_referencia:id/moviles/id"
             , "modelo_marca" => "errores_requerido && errores_texto && errores_unicidad_modificar:id,modelo_marca/moviles/modelo_marca,id"
-            , "valoracion" => "errores_texto"
-            , "precio" => "errores_precio"
+            , "valoracion" => "errores_requerido && errores_texto"
+            , "precio" => "errores_requerido && errores_precio"
             , "tamanio_pantalla" => "errores_texto"
             , 'autonomia' => 'errores_texto'
             , 'resolucion_camara' => 'errores_texto'
+            , 'fecha_lanzamiento' => 'errores_requerido && errores_fecha'
         );
         if (!$validacion = !\core\Validaciones::errores_validacion_request($validaciones, $datos)) {
             //print_r($datos);

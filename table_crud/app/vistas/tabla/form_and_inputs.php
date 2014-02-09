@@ -11,13 +11,13 @@ Precio: <input id='precio' name='precio' type='text' size='20'  maxlength='20' v
 <?php echo \core\HTML_Tag::span_error('precio', $datos); ?>
 <br />
 Tamaño de pantalla: <input id='tamanio_pantalla' name='tamanio_pantalla' type='text' size='20'  maxlength='20' value='<?php echo \core\Array_Datos::values('tamanio_pantalla', $datos); ?>'/>
-<?php echo \core\HTML_Tag::span_error('tamanio_pantalla', $datos); ?>
 <br />
 Autonomía - Conversacion: <input id='autonomia' name='autonomia' type='text' size='10'  maxlength='10' value='<?php echo \core\Array_Datos::values('autonomia', $datos); ?>'/>
-<?php echo \core\HTML_Tag::span_error('autonomia', $datos); ?>
 <br />
 Resolución cámara: <input id='resolucion_camara' name='resolucion_camara' type='text' size='10'  maxlength='10' value='<?php echo \core\Array_Datos::values('resolucion_camara', $datos); ?>'/>
-<?php echo \core\HTML_Tag::span_error('resolucion_camara', $datos); ?>
+<br />
+Fecha de lanzamiento: <input id='fecha_lanzamiento' name='fecha_lanzamiento' type='text' size='10'  maxlength='10' value='<?php echo \core\Array_Datos::values('fecha_lanzamiento', $datos); ?>'/>
+<?php echo \core\HTML_Tag::span_error('fecha_lanzamiento', $datos); ?>
 <br />
 <?php echo \core\HTML_Tag::span_error('errores_validacion', $datos); ?>
 

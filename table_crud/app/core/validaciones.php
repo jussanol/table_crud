@@ -199,21 +199,6 @@ class Validaciones  {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 	/**
 	 * Aplica técnicas para evitar la inyección de SQL malicioso
@@ -318,6 +303,7 @@ class Validaciones  {
 		}
 		return $mensaje ;		
 	}
+        
 
 	
 	
@@ -326,21 +312,22 @@ class Validaciones  {
 	 * @param type $cadena
 	 * @return boolean
 	 */
-	public static function errores_fecha_hora($cadena){
+	public static function errores_fecha($cadena){
 		$mensaje="";
 		if ($cadena!=null) {
 			$cadena=str_replace(array(' ', '-', '.', ',', ':'), '/', $cadena);
 			/* Para que sea mas facil y ahorrar comprobaciones cambiamos por / todos los signos que pone en el array, de esta manera la fecha siempre sera del tipo dd/mm/aaaa */
-			$patron_fecha_hora="/^\d{1,2}\/\d{1,2}\/\d{4}\/\d{2}\/\d{2}\/\d{2}/";
+			$patron_fecha_hora="/^\d{4}\/\d{1,2}\/\d{1,2}/";
 			$encuentros=array();
 			if (preg_match($patron_fecha_hora, $cadena, $encuentros)) {
 				$numeros = explode('/', $encuentros[0]); //con explode convertimos en subcadenas el array cadena, cada subcadena esta formada por la division que hace el caracter.
-				if (!mktime ($numeros[3], $numeros[4], $numeros[5], $numeros[1], $numeros[0], $numeros[2]))
+				if (!mktime ($numeros[1], $numeros[2], $numeros[0]))
 					$mensaje="La fecha  {$encuentros[0]} es errónea . Revísela. ";
-
+                                if (!checkdate($numeros[1], $numeros[2], $numeros[0]))
+					$mensaje="La fecha  {$encuentros[0]} es errónea . Revísela. ";
 			}
 			else
-				$mensaje="La fecha es errónea. Revísela. ";
+				$mensaje="La fecha es errónea. Revísela. El formato es: aaaa/mm/dd";
 		}
 		if ($mensaje=="") $mensaje=false;
 		return $mensaje;

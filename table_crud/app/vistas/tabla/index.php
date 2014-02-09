@@ -10,6 +10,7 @@
                 <th>Tamaño de pantalla</th>
                 <th>Autonomía - Conversación</th>
                 <th>Resolucion Cámara</th>
+                <th>Fecha de lanzamiento</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -30,6 +31,7 @@
                 }
                 echo "</td>                                                
                                                 <td>{$fila['resolucion_camara']} megapíxel</td>
+                                                <td>{$fila['fecha_lanzamiento']} </td>
 						<td>
 							<a class='boton' href='?menu=tabla&submenu=form_modificar&id={$fila['id']}' >modificar</a>
 							<a class='boton' href='?menu=tabla&submenu=form_borrar&id={$fila['id']}' >borrar</a>
@@ -39,7 +41,7 @@
             }
             echo "
 				<tr>
-					<td colspan='6'></td>
+					<td colspan='7'></td>
 					<td><a class='boton' href='?menu=tabla&submenu=form_insertar' >insertar</a></td>
 				</tr>
 			";
