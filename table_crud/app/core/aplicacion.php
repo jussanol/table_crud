@@ -34,7 +34,7 @@ class Aplicacion extends \core\Clase_Base {
 		// a parámetros $_GET[p1]=dato1 $_GET[p2]=dato2  $_GET[p3]=dato3 ....
 		\core\Rutas::interpretar_url_amigable();
 		
-//		\core\sgbd\bd::connect();
+		\core\sgbd\bd::connect();
 //		
 //		\core\SESSION::iniciar();
 //		\core\URL::registrar();
@@ -55,7 +55,7 @@ class Aplicacion extends \core\Clase_Base {
 		\core\Distribuidor::estudiar_query_string();
 
 		// Cerrar conexión a la base de datos
-//		\core\sgbd\bd::disconnect();	
+		\core\sgbd\bd::disconnect();	
 		
 	}
 	

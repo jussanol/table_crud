@@ -108,8 +108,8 @@ class mysqli implements \core\sgbd\SQL_interface {
 		
 		// Si no aportan nombre de tabla tomamos el definida en la clase
 		if ( ! $table_name) {
-			if ( ! self::$table_name)
-				throw new \Exception(__METHOD__." -> Debes especificar valor para \$table_name.");
+//			if ( ! self::$table_name)
+//				throw new \Exception(__METHOD__." -> Debes especificar valor para \$table_name.");
 			$table_name = self::$table_name;
 		}
 		
@@ -126,6 +126,8 @@ class mysqli implements \core\sgbd\SQL_interface {
 			}
 			else {
 				// si no se aporta $db_name ni está incluído en $table_name, se toma la bd por defecto
+//                            self::$db_name = \core\Configuracion::$db['db_name'];
+//                            $table_name = "daw_moviles";
 				return self::get_prefix_tabla($table_name, self::$db_name);
 			}	
 		}
@@ -207,8 +209,8 @@ class mysqli implements \core\sgbd\SQL_interface {
 	
 	private static function columnas_set(array $fila) {
 		
-		if ( ! count($fila))
-			throw new \Exception(__METHOD__." -> El parámetro \$fila debe contener por lo menos una  entrada.");
+//		if ( ! count($fila))
+//			throw new \Exception(__METHOD__." -> El parámetro \$fila debe contener por lo menos una  entrada.");
 		
 		$columnas_set = " ";
 		$i = 0;
@@ -274,13 +276,13 @@ class mysqli implements \core\sgbd\SQL_interface {
 		$columnas_set = self::columnas_set($fila);
 		
 		
-		if (isset($where) && strlen($where))
-			$where = " where $where";
-		elseif (isset($fila['id']))
-			$where = " where id = {$fila['id']}";
-		else {
-			throw new \Exception(__METHOD__." Error: debe aportarse la id or \$where.");
-		}
+//		if (isset($where) && strlen($where))
+//			$where = " where $where";
+//		elseif (isset($fila['id']))
+//			$where = " where id = {$fila['id']}";
+//		else {
+//			throw new \Exception(__METHOD__." Error: debe aportarse la id or \$where.");
+//		}
 		
 		$sql = "
 			update	".self::get_prefix_tabla($table)."
@@ -427,11 +429,11 @@ class mysqli implements \core\sgbd\SQL_interface {
 	
 	public static function last_insert_id() {
 		
-//		$sql = " select last_insert_id() as id;";
-//		$filas = self::get_rows($sql);
-//		return $filas[0]['id'];
+		$sql = " select last_insert_id() as id;";
+		$filas = self::get_rows($sql);
+		return $filas[0]['id'];
 		
-		return mysqli_insert_id(self::$connection);
+//		return mysqli_insert_id(self::$connection);
 		
 	}
 	
@@ -475,8 +477,8 @@ class mysqli implements \core\sgbd\SQL_interface {
 	public static function escape_string($cadena) {
 		
 		//TODO Descomentar la siguiente línea y borrar la última cuando funcione mysqli
-		return mysqli_real_escape_string(self::$connection, $cadena);
-//		return $cadena;
+		//return mysqli_real_escape_string(self::$connection, $cadena);
+		return $cadena;
 	}
 	
 	

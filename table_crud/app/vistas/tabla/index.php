@@ -1,5 +1,5 @@
 <div>
-    <h1>Listado de móviles</h1>
+    <h2>Listado de móviles</h2>
 
     <table border='1'>
         <thead>
@@ -10,6 +10,7 @@
                 <th>Tamaño de pantalla</th>
                 <th>Autonomía - Conversación</th>
                 <th>Resolucion Cámara</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -38,7 +39,7 @@
             }
             echo "
 				<tr>
-					<td colspan='4'></td>
+					<td colspan='6'></td>
 					<td><a class='boton' href='?menu=tabla&submenu=form_insertar' >insertar</a></td>
 				</tr>
 			";

@@ -50,18 +50,6 @@ class Distribuidor {
 		
 		$metodo = ($metodo ? $metodo : "index"); // Asignamos el método por defecto
 		
-		// Comprobamos que el usuario tiene permisos. Si no los tiene se redirige hacia otro controlador.
-//		if (\core\Usuario::tiene_permiso($controlador, $metodo) === false ) {
-//			if (\core\Usuario::$login == 'anonimo') {
-//				$controlador = 'usuarios';
-//				$metodo = 'form_login';
-//			}
-//			else {
-//				$datos['mensaje'] = "No tienes permisos para esta opción [$controlador][$metodo].";
-//				$controlador = 'mensajes';
-//				$metodo = 'index';
-//			}
-//		}
 		
 		$fichero_controlador = strtolower(PATH_APP."controladores/$controlador.php");
 		$controlador_clase = strtolower("\\controladores\\$controlador");

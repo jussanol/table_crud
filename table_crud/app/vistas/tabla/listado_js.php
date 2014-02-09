@@ -1,4 +1,4 @@
-{"articulos": [
+{"tabla": [
 <?php 
 		$i = 0;
 		foreach ($datos['filas'] as $fila) {
