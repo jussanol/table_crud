@@ -1,76 +1,60 @@
 /* 
     Document   : principal
-    Created on : 25-sep-2013, 16:21:08
-    Author     : jesus
+    Created on : 02-2014
+    Author     : Olga Juste
     Description:
         Purpose of the stylesheet follows.
 */
 
-root { 
-    display: block;
+body {
+    margin : 30px 200px;
+    background-image: url("fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color : black;
 }
 
-h1#titulo {
-	display: inline;
+h1 {
+    text-align: center;
+    font-family: Ravie, "Times New Roman";
+    font-size: 90px;
 }
 
-hr {
-	height: 5px;
-	background-color: lightgreen;
+#dos {
+    color : #990505;    
+    margin-top: -190px;
+    margin-left : -17px;
 }
 
-
-div#div_menu {
-	background-color: lightblue;
+#menu{
+    list-style: none;
+    font-size: x-large;
+    text-align: center;
+    margin-left: 200px;
 }
 
-div#div_menu fieldset {
-	padding: 0px 0px 5px 0px;
+.item {
+    float : left;
+    padding-right: 50px;
 }
 
-div#div_menu fieldset legend {
-	color: blue;
+.item:hover {
+    border-style: outset;
 }
 
-ul#menu {
-	margin: 0px;
-	padding: 5px;
-	list-style: none;
-	color: white;
+a:active {
+    color:red;
 }
 
-ul#menu li.item {
-	float: left;
-	border: 1px solid green;
-	background-color: lightgreen;
-	padding: 5px;
-	margin: 0px 0px;
-	background-color: blue;
-
+a:link {
+    color: whitesmoke;
 }
 
-ul#menu li.item:hover {
-	position: relative;
-	z-index: 1;
-	border: 1px yellow solid;
-	outline: yellow dotted thick;
+#pie {
+    clear : left;
+    padding-top: 20px;
 }
 
-ul#menu li.item a {
-	text-decoration: none;
-	color: white;
-
-}
-
-ul#menu li.item a:visited {
-	text-decoration: none;
-}
-
-ul#menu li.item a:hover {
-	color: yellow;
-}
-
-ul#menu li.item a:active {
-	color: orange;
-	background-color: #FF704D;
+#view_content {
+    clear: left;
 }

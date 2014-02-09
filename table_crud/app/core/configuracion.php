@@ -49,10 +49,10 @@ class Configuracion {
 	// localhost
 	public static $db = array(
 		'server'   => 'localhost',
-		'user'     => 'daw2_user',
-		'password' => 'daw2_user',
-		'db_name'  => 'daw2',
-		'prefix_'  => 'daw2_'
+		'user'     => 'daw_user',
+		'password' => 'daw_user',
+		'db_name'  => 'daw',
+		'prefix_'  => 'daw_'
 	);
 	
 
