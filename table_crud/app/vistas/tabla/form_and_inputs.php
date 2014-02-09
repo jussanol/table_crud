@@ -1,6 +1,6 @@
 
 <form method='post' action="?menu=<?php echo $datos['controlador_clase']; ?>&submenu=validar_<?php echo $datos['controlador_metodo']; ?>" >
-    
+    <input id='id' name='id' type='hidden' value='<?php echo \core\Array_Datos::values('id', $datos); ?>' />
     Marca y Modelo: <input id='modelo_marca' name='modelo_marca' type='text' size='100'  maxlength='100' value='<?php echo \core\Array_Datos::values('modelo_marca', $datos); ?>'/>
 <?php echo \core\HTML_Tag::span_error('modelo_marca', $datos); ?>
 <br />

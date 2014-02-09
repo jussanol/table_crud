@@ -11,7 +11,7 @@ class mysqli implements \core\sgbd\SQL_interface {
 	 * Variable usada para facilitar la ocultación del resultado de setencias de depuración.
 	 * @var boolean 
 	 */
-	private static $depuracion = true;
+	private static $depuracion = false;
 	
 	/**
 	 * Resource o Link que guarda la conexión con el SGBD
@@ -276,13 +276,13 @@ class mysqli implements \core\sgbd\SQL_interface {
 		$columnas_set = self::columnas_set($fila);
 		
 		
-//		if (isset($where) && strlen($where))
-//			$where = " where $where";
-//		elseif (isset($fila['id']))
-//			$where = " where id = {$fila['id']}";
-//		else {
-//			throw new \Exception(__METHOD__." Error: debe aportarse la id or \$where.");
-//		}
+		if (isset($where) && strlen($where))
+			$where = " where $where";
+		elseif (isset($fila['id']))
+			$where = " where id = {$fila['id']}";
+		else {
+			throw new \Exception(__METHOD__." Error: debe aportarse la id or \$where.");
+		}
 		
 		$sql = "
 			update	".self::get_prefix_tabla($table)."
