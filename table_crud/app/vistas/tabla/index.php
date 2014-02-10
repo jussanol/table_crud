@@ -32,10 +32,12 @@
                 echo "</td>                                                
                                                 <td>{$fila['resolucion_camara']} megapíxel</td>
                                                 <td>{$fila['fecha_lanzamiento']} </td>
-						<td>
-							<a class='boton' href='?menu=tabla&submenu=form_modificar&id={$fila['id']}' >modificar</a>
-							<a class='boton' href='?menu=tabla&submenu=form_borrar&id={$fila['id']}' >borrar</a>
-						</td>
+						<td>"
+                                                .\core\HTML_Tag::a_boton_onclick('boton', array('tabla', 'form_modificar', $fila['id']), 'modificar').
+                                                "-" 
+                                                .\core\HTML_Tag::a_boton_onclick('boton', array('tabla', 'form_borrar', $fila['id']), 'borrar').
+
+						"</td>
 					</tr>
 					";
             }

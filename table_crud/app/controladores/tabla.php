@@ -59,15 +59,16 @@ class tabla extends \core\Controlador {
     }
 
     public function form_modificar(array $datos = array()) {
+        
+        
 
         if (!count($datos)) { // Si no es un reenvío desde una validación fallida
             $validaciones = array(
                 "id" => "errores_requerido && errores_numero_entero_positivo && errores_referencia:id/moviles/id"
             );
             if (!$validacion = !\core\Validaciones::errores_validacion_request($validaciones, $datos)) {
-                $datos['mensaje'] = 'Datos erróneos para identificar el artículo a modificar';
+                $datos['mensaje'] = 'Datos erróneos para identificar el móvil a modificar';
                 $datos['url_continuar'] = \core\URL::generar("tabla");
-
                 $this->cargar_controlador('mensajes', 'mensaje', $datos);
                 return;
             } else {
@@ -78,14 +79,14 @@ class tabla extends \core\Controlador {
                     return;
                 } else {
                     $datos['values'] = $filas[0];
-                    $datos['values']['precio'] = \core\Conversiones::decimal_punto_a_coma_y_miles($datos['values']['precio']);
-                    $datos['values']['tamanio_pantalla'] = \core\Conversiones::decimal_punto_a_coma_y_miles($datos['values']['tamanio_pantalla']);
 
                     $clausulas = array('order_by' => " modelo_marca ");
                 }
             }
         }
 
+        $datos['values']['precio'] = \core\Conversiones::decimal_punto_a_coma_y_miles($datos['values']['precio']);
+        $datos['values']['tamanio_pantalla'] = \core\Conversiones::decimal_punto_a_coma_y_miles($datos['values']['tamanio_pantalla']);
         $datos['view_content'] = \core\Vista::generar(__FUNCTION__, $datos);
         $http_body = \core\Vista_Plantilla::generar('plantilla_principal', $datos);
         \core\HTTP_Respuesta::enviar($http_body);
@@ -118,9 +119,9 @@ class tabla extends \core\Controlador {
         else {
             $datos = array("alerta" => "Se han modificado correctamente.");
             // Definir el controlador que responderá después de la inserción
-//            $this->cargar_controlador('tabla', 'index', $datos);
-            \core\HTTP_Respuesta::set_header_line("location", \core\URL::generar("tabla/index"));
-            \core\HTTP_Respuesta::enviar();
+            $this->cargar_controlador('tabla', 'index', $datos);
+//            \core\HTTP_Respuesta::set_header_line("location", \core\URL::generar("tabla/index"));
+//            \core\HTTP_Respuesta::enviar();
         }
     }
 

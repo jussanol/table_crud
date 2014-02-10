@@ -28,6 +28,8 @@
 
         <script type='text/javascript' src="<?php echo URL_ROOT . "recursos" . DS . "js" . DS . "jquery" . DS . "jquery-1.10.2.min.js"; ?>" ></script>
         <script type='text/javascript' src="<?php echo URL_ROOT . "recursos" . DS . "js" . DS . "general.js"; ?>" ></script>
+        <script type='text/javascript' src="<?php echo URL_ROOT . "recursos/js/jquery/jquery-1.10.2.min.js"; ?>" ></script>
+        <script type='text/javascript' src="<?php echo URL_ROOT . "recursos/js/general.js"; ?>" ></script>
         <script type="text/javascript" src=""></script>
 
         <script type="text/javascript" >
@@ -77,7 +79,7 @@
             Documento creado por Olga Juste Sánchez. <a href="mailto:olgajuste.92@gmail.com">Contactar</a><br />
             Fecha última actualización: 2 de Febrero de 2014.
         </div>
-
+<?php echo \core\HTML_Tag::post_request_form();?>
 
 </body>
 

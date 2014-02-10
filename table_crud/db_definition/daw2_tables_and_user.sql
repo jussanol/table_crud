@@ -17,9 +17,10 @@ create table daw_moviles
 , modelo_marca varchar(100) not null
 , valoracion varchar(100) not null
 , precio decimal(12,2) null default null
-, tamaño_pantalla decimal(12,2) null default null
+, tamanio_pantalla decimal(12,2) null default null
 , autonomia decimal(12,2) null default null
 , resolucion_camara decimal(12,2) null default null
+, fecha_lanzamiento date not null
 , primary key (id)
 , unique (modelo_marca)
 )

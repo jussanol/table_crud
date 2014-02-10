@@ -174,7 +174,6 @@ class HTML_Tag extends \core\Clase_Base {
 			$texto,
 			array $otros_argumentos = array()
 	) {
-		
 		self::$use_post_request_form = true;
 		
 		$link = "";
